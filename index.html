@@ -19,24 +19,92 @@
 				</div>
 			 </nav>
 		</header>
-
-		<section class="m-3" style="width: 30rem;">
-			<div class="container-fluid">
-				<h2>Search for a City:</h2>
-				<form class="d-flex">
-				  <input class="form-control form-control-lg" type="search" placeholder="San Diego" aria-label="Search">
-				</form>
+		
+		<div class="row m-3">
+			<section class="col-3">
+				<div style="width: 20rem;">
+					<h2>Search for a City:</h2>
+					<form>
+					<input class="form-control form-control-lg" type="search" placeholder="San Diego" aria-label="Search">
+					</form>
+					<div class="d-grid gap-2 m-3">
+						<button class="btn btn-outline-success d-block" type="submit">Search</button>
+					</div>
+				</div> 
+				<hr>
+				<div class="d-grid gap-1 m-3">
+					<button class="btn btn-outline-success d-block" type="submit">Search</button>
+				</div>
+				<div class="d-grid gap-5 m-3">
+					<button class="btn btn-outline-success d-block" type="submit">Search</button>
+				</div>
 				<div class="d-grid gap-2 m-3">
 					<button class="btn btn-outline-success d-block" type="submit">Search</button>
 				</div>
-			 </div>
-			 
-			 <hr>
-
-			 	
-		</section>
+				<div class="d-grid gap-2 m-3">
+					<button class="btn btn-outline-success d-block" type="submit">Search</button>
+				</div>
+				<div class="d-grid gap-2 m-3">
+					<button class="btn btn-outline-success d-block" type="submit">Search</button>
+				</div>
 		
+			</section>
 
+			<main class="col-9">
+				<div class="card weather-card bg-primary text-light mb-3">
+					 <div class="card-body">
+						  <h2 id="city-name" class="card-title h4">Choose City</h2>
+						  <hr class="border-top border-light">
+						  <div id="weather-icon"></div>
+						  <p class="card-text">Current Temp (F): <span id="temp">-</span></p>
+						  <p class="card-text">Wind: <span id="wind">-</span></p>
+						  <p class="card-text">Humidity: <span id="humidity">-</span></p>
+					 </div>
+				</div>
+
+				<h4>5-Day Forecast:</h4>
+				<div class="card-group">
+					<div class="card">
+					  <div class="card-body">
+						 <h5 class="card-title">Card title</h5>
+						 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+						 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+					  </div>
+					</div>
+					<div class="card">
+					  <div class="card-body">
+						 <h5 class="card-title">Card title</h5>
+						 <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+						 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+					  </div>
+					</div>
+					<div class="card">
+					  <div class="card-body">
+						 <h5 class="card-title">Card title</h5>
+						 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+						 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+					  </div>
+					</div>
+					<div class="card">
+						<div class="card-body">
+						  <h5 class="card-title">Card title</h5>
+						  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+						  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+						</div>
+					 </div>
+					 <div class="card">
+						<div class="card-body">
+						  <h5 class="card-title">Card title</h5>
+						  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+						  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+						</div>
+					 </div>
+				 </div>
+
+			</main>
+		</div>
+
+		
 
 		<script 
 			src="https://code.jquery.com/jquery-3.5.0.min.js"
