@@ -11,6 +11,7 @@
 		<link rel="stylesheet" href="./assets/style.css">
 	</head>
 
+
 	<body>
 		<header>
 			<nav class="navbar navbar-dark bg-dark">
@@ -36,11 +37,12 @@
 					</form>
 					<hr>
 					
-					<div id="searched"></div>
-					
-					
+					<!-- Empty div to insert searched Cities by user. -->
+					<div id="searched"></div> 	
 				</section>
 				
+
+				<!-- Main holds Current card and forecast cards -->
 				<main class="col-9" id="weather-info" style="display: none;">
 					<div class="card weather-card bg-primary text-light mb-3">
 						<div class="card-body current">
@@ -53,6 +55,7 @@
 						</div>
 					</div>
 					
+					<!-- Empty cards that is targeted to add certain text through javascript. -->
 					<div>
 						<h4>5-Day Forecast:</h4>
 						<div class="card-group">
@@ -113,7 +116,7 @@
 		</div>
 			
 		
-
+		<!-- Linking jQuery and Moment. -->
 		<script 
 			src="https://code.jquery.com/jquery-3.5.0.min.js"
   			integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
