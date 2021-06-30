@@ -1,3 +1,6 @@
+.body {
+	background-color: whitesmoke;
+}
 
 .h1 {
 	color: white;
@@ -5,3 +8,21 @@
 	font-family: 'Rubik', sans-serif;
 	font-weight: 500;
 }
+
+.card-group {
+	font-family: 'Rubik', sans-serif;
+}
+
+.card {
+	background-color: rgba(161, 163, 185, 0.651);
+}
+
+.current {
+	font-family: 'Rubik', sans-serif;
+	background-color: rgb(56, 55, 92);
+}
+
+#search-form {
+	font-family: 'Rubik', sans-serif;	
+}
+

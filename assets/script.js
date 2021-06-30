@@ -2,7 +2,6 @@ var apiKey = "78a975a991c3d2cafd3350be28944d97";
 var searched = document.getElementById("searched");
 var searchInput = document.getElementById("search-input");
 
-
 function fetchWeather(city) {
 	var currentUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + apiKey;
 
@@ -30,8 +29,9 @@ function fetchWeather(city) {
 			.then(function (forecast) {
 	   	console.log(forecast);
 
+			
 			var tempFdegrees = (forecast.current.temp - 273.15) * 1.8 + 32;
-
+			
 			$("#current-temp").text(tempFdegrees.toFixed(2) + "°F");
 			$("#current-wind").text(forecast.current.wind_speed + " mph");
 			$("#current-humidity").text(forecast.current.humidity + " %");
@@ -39,27 +39,26 @@ function fetchWeather(city) {
 			
 			var currentIconUrl =
 			"http://openweathermap.org/img/wn/" + forecast.current.weather[0].icon + "@2x.png";
-	 
+			
 			var currentIconImg = $("<img>").attr({
 				src: currentIconUrl,
 				alt: forecast.current.weather[0].icon,
 			});
 			
 			$("#current-weather-icon").empty().append(currentIconImg);
-	
+			
 			var currentDay = moment.unix(forecast.current.dt).format("M/DD/YYYY");
-
+			
 			$("#city-name").text(current.name + " (" + currentDay + ")");
-
-
-
+			
+			
 			for (var i = 0; i < 5; i++) {
 				var tempF = (forecast.daily[i].temp.day - 273.15) * 1.8 + 32;
-
+				
 				$("#card-body" + i).find("#temp").text("Temp: " + tempF.toFixed(2) + "°F");
 				$("#card-body" + i).find("#wind").text("Wind: " + forecast.daily[i].wind_speed + " mph");
 				$("#card-body" + i).find("#humidity").text("Humidity: " + forecast.daily[i].humidity + " %");
-
+				
 				var iconUrl =
 				"http://openweathermap.org/img/wn/" + forecast.daily[i].weather[0].icon + "@2x.png";
 	 
@@ -80,9 +79,9 @@ function fetchWeather(city) {
 	   })
    })
 	.catch(function (error) {
-      return false;
-    });
-
+		return false;
+   });
+	
 	return true;
 }
 
@@ -91,7 +90,8 @@ $("#search-form").on("submit", function (event) {
 
 	var city = $("#search-input").val().trim();
 
-	if (city && fetchWeather(city)) {
+	if (city) {
+		fetchWeather(city);
 		searched.innerHTML += "<div class=\"list-group btn btn-primary m-2\" onclick=\"fetchWeather('"+ city +"');\" >" + city + "</div>";
 	} else {
 		alert('Please Enter a VALID City');
