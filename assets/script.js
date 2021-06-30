@@ -1,8 +1,7 @@
 var apiKey = "78a975a991c3d2cafd3350be28944d97";
 
-// function forecastWeather(city) {
-	// var currentUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + apiKey;
-	var currentUrl = "https://api.openweathermap.org/data/2.5/weather?q=London&units=imperial&appid=" + apiKey;
+function fetchWeather(city) {
+	var currentUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + apiKey;
 
 	fetch(currentUrl)
 	.then(function (response) {
@@ -44,7 +43,7 @@ var apiKey = "78a975a991c3d2cafd3350be28944d97";
 	
 			var currentDay = moment.unix(forecast.current.dt).format("M/DD/YYYY");
 
-			$("#city-name").text(" (" + currentDay + ")");
+			$("#city-name").text(current.name + " (" + currentDay + ")");
 
 
 
@@ -53,7 +52,7 @@ var apiKey = "78a975a991c3d2cafd3350be28944d97";
 
 				$("#card-body" + i).find("#temp").text("Temp: " + tempF.toFixed(2) + "°F");
 				$("#card-body" + i).find("#wind").text("Wind: " + forecast.daily[i].wind_speed + " mph");
-				$("#card-body" + i).find("#humidity").text("Humidity:" + forecast.daily[i].humidity + " %");
+				$("#card-body" + i).find("#humidity").text("Humidity: " + forecast.daily[i].humidity + " %");
 
 				var iconUrl =
 				"http://openweathermap.org/img/wn/" + forecast.daily[i].weather[0].icon + "@2x.png";
@@ -69,10 +68,26 @@ var apiKey = "78a975a991c3d2cafd3350be28944d97";
 
 				$("#card-body" + i).find("#city-date").text(unixFormat);
 
-			 }
+			}
 
+			$("#weather-info").show();
 	   })
-  })
-// }
+   })
+	
+
+}
+
+$("#search-form").on("submit", function (event) {
+	event.preventDefault();
+
+
+	var city = $("#search-input").val().trim();
+
+	if (city === "") {
+	  return;
+	}
+
+	fetchWeather(city);
+ });
 
 
