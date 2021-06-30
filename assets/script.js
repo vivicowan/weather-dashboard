@@ -43,6 +43,16 @@ function fetchWeather(city) {
 			$("#current-humidity").text(forecast.current.humidity + " %");
 			$("#current-uvi").text(forecast.current.uvi);
 			
+			$("#current-uvi").is(function(){
+				var uvi = forecast.current.uvi;
+				if (uvi >= 6) {
+					$('#current-uvi').removeClass('badge bg-success').removeClass('badge bg-warning text-dark').addClass('badge bg-danger');;
+				 } else if (uvi >= 3) {
+					$('#current-uvi').removeClass('badge bg-danger').removeClass('badge bg-success').addClass('badge bg-warning text-dark');
+				 } else {
+					$('#current-uvi').removeClass('badge bg-danger').removeClass('badge bg-warning text-dark').addClass('badge bg-success');
+				}
+			});
 		   
 			var currentIconUrl =
 			"https://openweathermap.org/img/wn/" + forecast.current.weather[0].icon + "@2x.png";
