@@ -25,6 +25,29 @@ var apiKey = "78a975a991c3d2cafd3350be28944d97";
 			.then(function (forecast) {
 	   	console.log(forecast);
 
+			var tempFdegrees = (forecast.current.temp - 273.15) * 1.8 + 32;
+
+			$("#current-temp").text(tempFdegrees.toFixed(2) + "°F");
+			$("#current-wind").text(forecast.current.wind_speed + " mph");
+			$("#current-humidity").text(forecast.current.humidity + " %");
+			$("#current-uvi").text(forecast.current.uvi);
+			
+			var currentIconUrl =
+			"http://openweathermap.org/img/wn/" + forecast.current.weather[0].icon + "@2x.png";
+	 
+			var currentIconImg = $("<img>").attr({
+				src: currentIconUrl,
+				alt: forecast.current.weather[0].icon,
+			});
+			
+			$("#current-weather-icon").empty().append(currentIconImg);
+	
+			var currentDay = moment.unix(forecast.current.dt).format("M/DD/YYYY");
+
+			$("#city-name").text(" (" + currentDay + ")");
+
+
+
 			for (var i = 0; i < 5; i++) {
 				var tempF = (forecast.daily[i].temp.day - 273.15) * 1.8 + 32;
 
@@ -47,11 +70,6 @@ var apiKey = "78a975a991c3d2cafd3350be28944d97";
 				$("#card-body" + i).find("#city-date").text(unixFormat);
 
 			 }
-
-			
-			
-
-
 
 	   })
   })
