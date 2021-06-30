@@ -24,11 +24,11 @@
 			<section class="col-3">
 				<div style="width: 20rem;">
 					<h2>Search for a City:</h2>
-					<form>
-					<input class="form-control form-control-lg" type="search" placeholder="San Diego" aria-label="Search">
+					<form id="search-form">
+					<input class="form-control form-control-lg" id="search-input" type="search" placeholder="San Diego" aria-label="Search">
 					</form>
 					<div class="d-grid gap-2 m-3">
-						<button class="btn btn-outline-success d-block" type="submit">Search</button>
+						<button class="search btn btn-outline-success d-block" type="submit">Search</button>
 					</div>
 				</div> 
 				<hr>
@@ -55,7 +55,6 @@
 					 <div class="card-body">
 						  <h2 id="city-name" class="card-title h4">Choose City</h2>
 						  <hr class="border-top border-light">
-						  <div id="weather-icon"></div>
 						  <p class="card-text">Current Temp (F): <span id="temp">-</span></p>
 						  <p class="card-text">Wind: <span id="wind">-</span></p>
 						  <p class="card-text">Humidity: <span id="humidity">-</span></p>
@@ -65,41 +64,56 @@
 				<h4>5-Day Forecast:</h4>
 				<div class="card-group">
 					<div class="card">
-					  <div class="card-body">
-						 <h5 class="card-title">Card title</h5>
-						 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-						 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-					  </div>
+						<div class="card-body" id="card-body0">
+							<h5 id="city-date" class="card-title h4"></h5>
+							<hr class="border-top border-light">
+							<div id="weather-icon"></div>
+							<p class="card-text" id="temp"></p>
+							<p class="card-text" id="wind"></p>
+							<p class="card-text" id="humidity"></p>
+					   </div>
 					</div>
 					<div class="card">
-					  <div class="card-body">
-						 <h5 class="card-title">Card title</h5>
-						 <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-						 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-					  </div>
+						<div class="card-body" id="card-body1">
+							<h5 id="city-date" class="card-title h4"></h5>
+							<hr class="border-top border-light">
+							<div id="weather-icon"></div>
+							<p class="card-text" id="temp"></p>
+							<p class="card-text" id="wind"></p>
+							<p class="card-text" id="humidity"></p>
+					   </div>
 					</div>
 					<div class="card">
-					  <div class="card-body">
-						 <h5 class="card-title">Card title</h5>
-						 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-						 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-					  </div>
+						<div class="card-body" id="card-body2">
+							<h5 id="city-date" class="card-title h4"></h5>
+							<hr class="border-top border-light">
+							<div id="weather-icon"></div>
+							<p class="card-text" id="temp"></p>
+							<p class="card-text" id="wind"></p>
+							<p class="card-text" id="humidity"></p>
+					   </div>
 					</div>
 					<div class="card">
-						<div class="card-body">
-						  <h5 class="card-title">Card title</h5>
-						  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-						  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-						</div>
-					 </div>
-					 <div class="card">
-						<div class="card-body">
-						  <h5 class="card-title">Card title</h5>
-						  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-						  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-						</div>
-					 </div>
-				 </div>
+						<div class="card-body" id="card-body3">
+							<h5 id="city-date" class="card-title h4"></h5>
+							<hr class="border-top border-light">
+							<div id="weather-icon"></div>
+							<p class="card-text" id="temp"></p>
+							<p class="card-text" id="wind"></p>
+							<p class="card-text" id="humidity"></p>
+					   </div>
+					</div>
+					<div class="card">
+						<div class="card-body" id="card-body4">
+							<h5 id="city-date" class="card-title h4"></h5>
+							<hr class="border-top border-light">
+							<div id="weather-icon"></div>
+							<p class="card-text" id="temp"></p>
+							<p class="card-text" id="wind"></p>
+							<p class="card-text" id="humidity"></p>
+					   </div>
+					</div>
+				</div>
 
 			</main>
 		</div>
@@ -110,6 +124,8 @@
 			src="https://code.jquery.com/jquery-3.5.0.min.js"
   			integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
   			crossorigin="anonymous"></script>
-		<script src="assets/script.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+		<script src="./assets/script.js"></script>
+
 	</body>
 </html>
