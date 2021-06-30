@@ -1,14 +1,20 @@
 var apiKey = "78a975a991c3d2cafd3350be28944d97";
+var searched = document.getElementById("searched");
+var searchInput = document.getElementById("search-input");
+
 
 function fetchWeather(city) {
 	var currentUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + apiKey;
 
 	fetch(currentUrl)
 	.then(function (response) {
-   	return response.json();
+		if(response.status != 200){
+			throw (response.statusText);
+		}
+		return response.json();
 	})
 	.then(function (current) {
-   	console.log(current);
+		console.log(current);
 
 		var lat = current.coord.lat;
 			console.log(lat);
@@ -73,21 +79,29 @@ function fetchWeather(city) {
 			$("#weather-info").show();
 	   })
    })
-	
+	.catch(function (error) {
+      return false;
+    });
 
+	return true;
 }
 
 $("#search-form").on("submit", function (event) {
 	event.preventDefault();
 
-
 	var city = $("#search-input").val().trim();
 
-	if (city === "") {
-	  return;
+	if (city && fetchWeather(city)) {
+		searched.innerHTML += "<div class=\"list-group btn btn-primary m-2\" onclick=\"fetchWeather('"+ city +"');\" >" + city + "</div>";
+	} else {
+		alert('Please Enter a VALID City');
 	}
+	searchInput.value = '';
+});
 
-	fetchWeather(city);
- });
+ 
+	
+
+
 
 
