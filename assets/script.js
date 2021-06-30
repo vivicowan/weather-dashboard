@@ -28,9 +28,9 @@ var apiKey = "78a975a991c3d2cafd3350be28944d97";
 			for (var i = 0; i < 5; i++) {
 				var tempF = (forecast.daily[i].temp.day - 273.15) * 1.8 + 32;
 
-				$("#card-body" + i).find("#temp").text(tempF.toFixed(2) + "°F");
-				$("#card-body" + i).find("#wind").text(forecast.daily[i].wind_speed + " mph");
-				$("#card-body" + i).find("#humidity").text(forecast.daily[i].humidity + " %");
+				$("#card-body" + i).find("#temp").text("Temp: " + tempF.toFixed(2) + "°F");
+				$("#card-body" + i).find("#wind").text("Wind: " + forecast.daily[i].wind_speed + " mph");
+				$("#card-body" + i).find("#humidity").text("Humidity:" + forecast.daily[i].humidity + " %");
 
 				var iconUrl =
 				"http://openweathermap.org/img/wn/" + forecast.daily[i].weather[0].icon + "@2x.png";
