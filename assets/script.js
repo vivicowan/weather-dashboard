@@ -38,7 +38,7 @@ function fetchWeather(city) {
 			$("#current-uvi").text(forecast.current.uvi);
 			
 			var currentIconUrl =
-			"http://openweathermap.org/img/wn/" + forecast.current.weather[0].icon + "@2x.png";
+			"https://openweathermap.org/img/wn/" + forecast.current.weather[0].icon + "@2x.png";
 			
 			var currentIconImg = $("<img>").attr({
 				src: currentIconUrl,
